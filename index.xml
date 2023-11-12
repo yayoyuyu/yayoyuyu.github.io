@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>ﾌｺﾞｺﾞｺﾞｺﾞ</title><link>https://example.org/</link><description>Recent content on ﾌｺﾞｺﾞｺﾞｺﾞ</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 12 Nov 2023 15:00:18 +0900</lastBuildDate><atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml"/><item><title>最初の</title><link>https://example.org/post/first/</link><pubDate>Sun, 12 Nov 2023 15:00:18 +0900</pubDate><guid>https://example.org/post/first/</guid><description>暇だったのでGithub Pages+Hugoでサイト作ってみました。
+Github Pages、無料なんでね。無料。無料ですよ？もう使うしか無いじゃないですか…
+Hugo触るの初めてなのでよくわからないですが、情報はいっぱいあるのでそんなに難しくはないかな～？ 理解に若干苦しんだのはリポジトリを2個使うってことくらいですかね。管理用リポジトリにプッシュして、それをGithub ActionsでビルドしてGithub Pagesのリポジトリにプッシュするっていうのは一瞬わからなかったかも。まあ今は完全に理解しました。
+一応ちょくちょく何か書きたいな～とは思ってるので多分また何か書きます。多分ね
+そんじゃ今回はそんな感じで。</description></item></channel></rss>
