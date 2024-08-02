@@ -4,11 +4,11 @@ loading="lazy"
 alt="ビフォーアフター"
 >&lt;/p>
 &lt;p>だいたいこんなかんじ。&lt;/p>
-&lt;p>ちなみにmatcher_prefixのparamsのprefixLengthを変更するとprefixの長さを変更出来る。&lt;/p></description></item><item><title>skkeletonがgit経由で取得した辞書を読んでくれない問題の対処</title><link>https://yayoyuyu.github.io/post/20231209-skkeleton-doesnt-read-dict/</link><pubDate>Sat, 09 Dec 2023 02:31:56 +0900</pubDate><guid>https://yayoyuyu.github.io/post/20231209-skkeleton-doesnt-read-dict/</guid><description>&lt;h2 id="なんでこうなるの">なんでこうなるの&lt;/h2>
-&lt;p>gitが改行コードを自動で変換する設定になっていたせいらしい&lt;br>
+&lt;p>ちなみにmatcher_prefixのparamsのprefixLengthを変更するとprefixの長さを変更出来る。&lt;/p></description></item><item><title>skkeletonがgit経由で取得した辞書を読んでくれない問題の対処</title><link>https://yayoyuyu.github.io/post/20231209-skkeleton-doesnt-read-dict/</link><pubDate>Sat, 09 Dec 2023 02:31:56 +0900</pubDate><guid>https://yayoyuyu.github.io/post/20231209-skkeleton-doesnt-read-dict/</guid><description>&lt;h2 id="なんでこうなるの">なんでこうなるの
+&lt;/h2>&lt;p>gitが改行コードを自動で変換する設定になっていたせいらしい&lt;br>
 skkeletonは辞書の改行コードがLFじゃないと読んでくれないのでそのせいで失敗してた&lt;/p>
-&lt;h2 id="対処">対処&lt;/h2>
-&lt;p>こんな感じでgitの設定を変更して改行コードの自動変換をオフにすればよい&lt;/p>
+&lt;h2 id="対処">対処
+&lt;/h2>&lt;p>こんな感じでgitの設定を変更して改行コードの自動変換をオフにすればよい&lt;/p>
 &lt;pre tabindex="0">&lt;code>git config --global core.autocrlf false
 &lt;/code>&lt;/pre>&lt;p>追記
 globalで設定すると他のリポジトリに問題が起きる可能性があるのでlocalで設定した方が安全かも&lt;/p></description></item><item><title>最初の</title><link>https://yayoyuyu.github.io/post/first/</link><pubDate>Sun, 12 Nov 2023 15:00:18 +0900</pubDate><guid>https://yayoyuyu.github.io/post/first/</guid><description>&lt;p>暇だったのでGithub Pages+Hugoでサイト作ってみました。&lt;br>
