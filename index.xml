@@ -1,4 +1,66 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ﾌｺﾞｺﾞｺﾞｺﾞ</title><link>https://yayoyuyu.github.io/</link><description>Recent content on ﾌｺﾞｺﾞｺﾞｺﾞ</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sat, 03 Aug 2024 02:16:01 +0900</lastBuildDate><atom:link href="https://yayoyuyu.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>ddc-fuzzyにddc-filter-matcher_prefixを合わせるといい感じかも</title><link>https://yayoyuyu.github.io/post/2020240803-ddc-fuzzy-and-matcher_prefix/</link><pubDate>Sat, 03 Aug 2024 02:16:01 +0900</pubDate><guid>https://yayoyuyu.github.io/post/2020240803-ddc-fuzzy-and-matcher_prefix/</guid><description>&lt;p>基本的にddc.vimのfilterはddc-fuzzyを使っていたのだけど、途中の部分にマッチしたものが出ていたのが出てくるのがあまり好きじゃなかったのでmatcher_prefixでprefixにマッチさせたら結構いい感じだったかもしれない。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ﾌｺﾞｺﾞｺﾞｺﾞ</title><link>https://yayoyuyu.github.io/</link><description>Recent content on ﾌｺﾞｺﾞｺﾞｺﾞ</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 08 Dec 2024 21:00:32 +0900</lastBuildDate><atom:link href="https://yayoyuyu.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>LinuxでVCClientを使ってみる</title><link>https://yayoyuyu.github.io/post/linux-vcclient/</link><pubDate>Sun, 08 Dec 2024 21:00:32 +0900</pubDate><guid>https://yayoyuyu.github.io/post/linux-vcclient/</guid><description>&lt;h2 id="vcclientとは">VCClientとは
+&lt;/h2>&lt;p>&lt;a class="link" href="https://github.com/w-okada/voice-changer" target="_blank" rel="noopener"
+>VCClient&lt;/a>とは、いわゆるAIボイスチェンジャーと言われるソフト。
+RVCやMMVCなど複数のモデルに対応している。&lt;br>
+対応プラットフォームはWindows、M1 Mac、Linux、Google Colab。&lt;/p>
+&lt;h2 id="インストール方法について">インストール方法について
+&lt;/h2>&lt;p>Windows、M1 Macではビルドされたものが&lt;a class="link" href="https://huggingface.co/wok000/vcclient000/tree/main" target="_blank" rel="noopener"
+>Hugging Face&lt;/a>でダウンロードできるが、Linuxへは配布されていないので&lt;a class="link" href="https://github.com/w-okada/voice-changer/blob/master/README_dev_ja.md" target="_blank" rel="noopener"
+>開発者向けの方法&lt;/a>でインストールする。&lt;/p>
+&lt;h2 id="インストール">インストール
+&lt;/h2>&lt;p>まずはリポジトリをクローンしてcd&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git clone https://github.com/w-okada/voice-changer.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd ./voice-changer
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="仮想環境をつくる">仮想環境をつくる
+&lt;/h3>&lt;p>ドキュメントではAnacondaを使っているが、多分仮想環境を作れるなら何でもよさそうなので
+&lt;a class="link" href="https://github.com/astral-sh/uv" target="_blank" rel="noopener"
+>uv&lt;/a> を使ってみる。
+pythonのバージョンは&lt;strong>3.10&lt;/strong>なのでオプションで指定しておく。&lt;br>
+仮想環境を作って有効化&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>uv venv -p 3.10
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>source ./.venv/bin/activate
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>仮想環境から抜ける時は&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>deactivate
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>でOK&lt;/p>
+&lt;h3 id="モジュールをインストールする">モジュールをインストールする
+&lt;/h3>&lt;p>&lt;a class="link" href="https://github.com/w-okada/voice-changer/blob/master/server/requirements.txt" target="_blank" rel="noopener"
+>requirements.txt&lt;/a>からインストール&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>uv pip install -r ./server/requirements.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>自分の環境では実行したときに&lt;code>ModuleNotFoundError&lt;/code>と言われたので追加でインストールした。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>uv pip install fairseq pyworld
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="つかう">つかう
+&lt;/h2>&lt;p>serverディレクトリに入って&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>cd ./server
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>起動する。ちなみにこれは公式ドキュメントに書いてあったものからhttpsで起動するオプションを外したもの。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>python3 MMVCServerSIO.py -p &lt;span style="color:#ae81ff">18888&lt;/span> &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --content_vec_500 pretrain/checkpoint_best_legacy_500.pt &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --content_vec_500_onnx pretrain/content_vec_500.onnx &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --content_vec_500_onnx_on true &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --hubert_base pretrain/hubert_base.pt &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --hubert_base_jp pretrain/rinna_hubert_base_jp.pt &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --hubert_soft pretrain/hubert/hubert-soft-0d54a1f4.pt &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --nsf_hifigan pretrain/nsf_hifigan/model &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --crepe_onnx_full pretrain/crepe_onnx_full.onnx &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --crepe_onnx_tiny pretrain/crepe_onnx_tiny.onnx &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --rmvpe pretrain/rmvpe.pt &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --model_dir model_dir &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --samples samples.json
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>shファイルで保存して実行権限を与えておくとサッと実行できて便利。&lt;/p>
+&lt;p>初回起動時はモデルのダウンロードが行われる。デフォルト設定ならサーバーが&lt;code>http://localhost:18888/&lt;/code>で起動するので、適当なブラウザで開く。&lt;/p>
+&lt;p>チュートリアルは&lt;a class="link" href="https://github.com/w-okada/voice-changer/blob/master/tutorials/tutorial_rvc_ja_latest.md" target="_blank" rel="noopener"
+>ここ&lt;/a>&lt;/p>
+&lt;h3 id="ループバック">ループバック
+&lt;/h3>&lt;p>実際にボイスチャットなどでマイク入力として使用する場合は、出力から入力へループバックする必要がある。PipeWireなら&lt;code>libpipewire-module-loopback&lt;/code>を使うとよさそう。
+実際の方法は&lt;a class="link" href="https://sorrel.sh/blog/pipewire-how-to-static-loopbacks/" target="_blank" rel="noopener"
+>この記事&lt;/a>とかを見るのがよさげかも。&lt;/p>
+&lt;h3 id="終了する">終了する
+&lt;/h3>&lt;p>CTRL-cで終了できているように見えるが、裏ではまだ生きているのでhtopやらなんやらでkillする。(もっとちゃんとした方法があるかも)&lt;br>
+&lt;code>deactivate&lt;/code>で仮想環境を抜ければおわり。&lt;/p>
+&lt;h2 id="リンク">リンク
+&lt;/h2>&lt;p>&lt;a class="link" href="https://github.com/w-okada/voice-changer" target="_blank" rel="noopener"
+>VCClient&lt;/a>&lt;br>
+&lt;a class="link" href="https://github.com/astral-sh/uv" target="_blank" rel="noopener"
+>uv&lt;/a>&lt;/p></description></item><item><title>ddc-fuzzyにddc-filter-matcher_prefixを合わせるといい感じかも</title><link>https://yayoyuyu.github.io/post/2020240803-ddc-fuzzy-and-matcher_prefix/</link><pubDate>Sat, 03 Aug 2024 02:16:01 +0900</pubDate><guid>https://yayoyuyu.github.io/post/2020240803-ddc-fuzzy-and-matcher_prefix/</guid><description>&lt;p>基本的にddc.vimのfilterはddc-fuzzyを使っていたのだけど、途中の部分にマッチしたものが出ていたのが出てくるのがあまり好きじゃなかったのでmatcher_prefixでprefixにマッチさせたら結構いい感じだったかもしれない。&lt;/p>
 &lt;p>&lt;img src="https://i.gyazo.com/3343fb764fb0fc88a7d9c3b37bb3da42.webp"
 loading="lazy"
 alt="ビフォーアフター"
