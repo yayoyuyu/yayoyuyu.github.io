@@ -1,81 +1,86 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ﾌｺﾞｺﾞｺﾞｺﾞ</title><link>https://yayoyuyu.github.io/</link><description>Recent content on ﾌｺﾞｺﾞｺﾞｺﾞ</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 08 Dec 2024 21:00:32 +0900</lastBuildDate><atom:link href="https://yayoyuyu.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>LinuxでVCClientを使ってみる</title><link>https://yayoyuyu.github.io/post/linux-vcclient/</link><pubDate>Sun, 08 Dec 2024 21:00:32 +0900</pubDate><guid>https://yayoyuyu.github.io/post/linux-vcclient/</guid><description>&lt;h2 id="vcclientとは">VCClientとは
-&lt;/h2>&lt;p>&lt;a class="link" href="https://github.com/w-okada/voice-changer" target="_blank" rel="noopener"
->VCClient&lt;/a>とは、いわゆるAIボイスチェンジャーと言われるソフト。
-RVCやMMVCなど複数のモデルに対応している。&lt;br>
-対応プラットフォームはWindows、M1 Mac、Linux、Google Colab。&lt;/p>
-&lt;h2 id="インストール方法について">インストール方法について
-&lt;/h2>&lt;p>Windows、M1 Macではビルドされたものが&lt;a class="link" href="https://huggingface.co/wok000/vcclient000/tree/main" target="_blank" rel="noopener"
->Hugging Face&lt;/a>でダウンロードできるが、Linuxへは配布されていないので&lt;a class="link" href="https://github.com/w-okada/voice-changer/blob/master/README_dev_ja.md" target="_blank" rel="noopener"
->開発者向けの方法&lt;/a>でインストールする。&lt;/p>
-&lt;h2 id="インストール">インストール
-&lt;/h2>&lt;p>まずはリポジトリをクローンしてcd&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git clone https://github.com/w-okada/voice-changer.git
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd ./voice-changer
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="仮想環境をつくる">仮想環境をつくる
-&lt;/h3>&lt;p>ドキュメントではAnacondaを使っているが、多分仮想環境を作れるなら何でもよさそうなので
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>イシュークリーム</title><link>https://yayoyuyu.github.io/</link><description>Recent content on イシュークリーム</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Sun, 22 Feb 2026 00:07:52 +0900</lastBuildDate><atom:link href="https://yayoyuyu.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Linuxでブラウザにデフォルトのエクスプローラーを開かせる</title><link>https://yayoyuyu.github.io/post/linux-explorer-dbus/</link><pubDate>Sun, 22 Feb 2026 00:07:52 +0900</pubDate><guid>https://yayoyuyu.github.io/post/linux-explorer-dbus/</guid><description>&lt;h2 id="問題"&gt;問題
+&lt;/h2&gt;&lt;p&gt;ウェブブラウザからダウンロードフォルダを開くときなどに起動するエクスプローラーがいつも使っているものと違っていた&lt;/p&gt;
+&lt;h2 id="設定する"&gt;設定する
+&lt;/h2&gt;&lt;p&gt;どうやらdbus経由でエクスプローラーを呼び出しているようなので、設定ファイルで指定する&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$XDG_DATA_HOME/dbus-1/services/org.freedesktop.FileManager1.service&lt;/code&gt; に
+以下のようなファイルを作る ( &lt;code&gt;$XDG_DATA_HOME&lt;/code&gt; は指定していないなら &lt;code&gt;~/.local/share&lt;/code&gt; )&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Exec=&lt;/code&gt; のところは自分の使っているエクスプローラーのパスを指定する。この例では &lt;code&gt;pcmanfm-qt&lt;/code&gt; を指定している&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-txt" data-lang="txt"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;[D-BUS Service]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Name=org.freedesktop.FileManager1
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Exec=/usr/bin/pcmanfm-qt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>LinuxでVCClientを使ってみる</title><link>https://yayoyuyu.github.io/post/linux-vcclient/</link><pubDate>Sun, 08 Dec 2024 21:00:32 +0900</pubDate><guid>https://yayoyuyu.github.io/post/linux-vcclient/</guid><description>&lt;h2 id="vcclientとは"&gt;VCClientとは
+&lt;/h2&gt;&lt;p&gt;&lt;a class="link" href="https://github.com/w-okada/voice-changer" target="_blank" rel="noopener"
+&gt;VCClient&lt;/a&gt;とは、いわゆるAIボイスチェンジャーと言われるソフト。
+RVCやMMVCなど複数のモデルに対応している。&lt;br&gt;
+対応プラットフォームはWindows、M1 Mac、Linux、Google Colab。&lt;/p&gt;
+&lt;h2 id="インストール方法について"&gt;インストール方法について
+&lt;/h2&gt;&lt;p&gt;Windows、M1 Macではビルドされたものが&lt;a class="link" href="https://huggingface.co/wok000/vcclient000/tree/main" target="_blank" rel="noopener"
+&gt;Hugging Face&lt;/a&gt;でダウンロードできるが、Linuxへは配布されていないので&lt;a class="link" href="https://github.com/w-okada/voice-changer/blob/master/README_dev_ja.md" target="_blank" rel="noopener"
+&gt;開発者向けの方法&lt;/a&gt;でインストールする。&lt;/p&gt;
+&lt;h2 id="インストール"&gt;インストール
+&lt;/h2&gt;&lt;p&gt;まずはリポジトリをクローンしてcd&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git clone https://github.com/w-okada/voice-changer.git
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cd ./voice-changer
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="仮想環境をつくる"&gt;仮想環境をつくる
+&lt;/h3&gt;&lt;p&gt;ドキュメントではAnacondaを使っているが、多分仮想環境を作れるなら何でもよさそうなので
 &lt;a class="link" href="https://github.com/astral-sh/uv" target="_blank" rel="noopener"
->uv&lt;/a> を使ってみる。
-pythonのバージョンは&lt;strong>3.10&lt;/strong>なのでオプションで指定しておく。&lt;br>
-仮想環境を作って有効化&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>uv venv -p 3.10
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>source ./.venv/bin/activate
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>仮想環境から抜ける時は&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>deactivate
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>でOK&lt;/p>
-&lt;h3 id="モジュールをインストールする">モジュールをインストールする
-&lt;/h3>&lt;p>&lt;a class="link" href="https://github.com/w-okada/voice-changer/blob/master/server/requirements.txt" target="_blank" rel="noopener"
->requirements.txt&lt;/a>からインストール&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>uv pip install -r ./server/requirements.txt
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>自分の環境では実行したときに&lt;code>ModuleNotFoundError&lt;/code>と言われたので追加でインストールした。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>uv pip install fairseq pyworld
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="つかう">つかう
-&lt;/h2>&lt;p>serverディレクトリに入って&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>cd ./server
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>起動する。ちなみにこれは公式ドキュメントに書いてあったものからhttpsで起動するオプションを外したもの。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>python3 MMVCServerSIO.py -p &lt;span style="color:#ae81ff">18888&lt;/span> &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --content_vec_500 pretrain/checkpoint_best_legacy_500.pt &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --content_vec_500_onnx pretrain/content_vec_500.onnx &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --content_vec_500_onnx_on true &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --hubert_base pretrain/hubert_base.pt &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --hubert_base_jp pretrain/rinna_hubert_base_jp.pt &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --hubert_soft pretrain/hubert/hubert-soft-0d54a1f4.pt &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --nsf_hifigan pretrain/nsf_hifigan/model &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --crepe_onnx_full pretrain/crepe_onnx_full.onnx &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --crepe_onnx_tiny pretrain/crepe_onnx_tiny.onnx &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --rmvpe pretrain/rmvpe.pt &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --model_dir model_dir &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --samples samples.json
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>shファイルで保存して実行権限を与えておくとサッと実行できて便利。&lt;/p>
-&lt;p>初回起動時はモデルのダウンロードが行われる。デフォルト設定ならサーバーが&lt;code>http://localhost:18888/&lt;/code>で起動するので、適当なブラウザで開く。&lt;/p>
-&lt;p>チュートリアルは&lt;a class="link" href="https://github.com/w-okada/voice-changer/blob/master/tutorials/tutorial_rvc_ja_latest.md" target="_blank" rel="noopener"
->ここ&lt;/a>&lt;/p>
-&lt;h3 id="ループバック">ループバック
-&lt;/h3>&lt;p>実際にボイスチャットなどでマイク入力として使用する場合は、出力から入力へループバックする必要がある。PipeWireなら&lt;code>libpipewire-module-loopback&lt;/code>を使うとよさそう。
+&gt;uv&lt;/a&gt; を使ってみる。
+pythonのバージョンは&lt;strong&gt;3.10&lt;/strong&gt;なのでオプションで指定しておく。&lt;br&gt;
+仮想環境を作って有効化&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;uv venv -p 3.10
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;source ./.venv/bin/activate
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;仮想環境から抜ける時は&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;deactivate
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;でOK&lt;/p&gt;
+&lt;h3 id="モジュールをインストールする"&gt;モジュールをインストールする
+&lt;/h3&gt;&lt;p&gt;&lt;a class="link" href="https://github.com/w-okada/voice-changer/blob/master/server/requirements.txt" target="_blank" rel="noopener"
+&gt;requirements.txt&lt;/a&gt;からインストール&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;uv pip install -r ./server/requirements.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;自分の環境では実行したときに&lt;code&gt;ModuleNotFoundError&lt;/code&gt;と言われたので追加でインストールした。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;uv pip install fairseq pyworld
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="つかう"&gt;つかう
+&lt;/h2&gt;&lt;p&gt;serverディレクトリに入って&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cd ./server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;起動する。ちなみにこれは公式ドキュメントに書いてあったものからhttpsで起動するオプションを外したもの。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;python3 MMVCServerSIO.py -p &lt;span style="color:#ae81ff"&gt;18888&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --content_vec_500 pretrain/checkpoint_best_legacy_500.pt &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --content_vec_500_onnx pretrain/content_vec_500.onnx &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --content_vec_500_onnx_on true &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --hubert_base pretrain/hubert_base.pt &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --hubert_base_jp pretrain/rinna_hubert_base_jp.pt &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --hubert_soft pretrain/hubert/hubert-soft-0d54a1f4.pt &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --nsf_hifigan pretrain/nsf_hifigan/model &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --crepe_onnx_full pretrain/crepe_onnx_full.onnx &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --crepe_onnx_tiny pretrain/crepe_onnx_tiny.onnx &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --rmvpe pretrain/rmvpe.pt &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --model_dir model_dir &lt;span style="color:#ae81ff"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --samples samples.json
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;shファイルで保存して実行権限を与えておくとサッと実行できて便利。&lt;/p&gt;
+&lt;p&gt;初回起動時はモデルのダウンロードが行われる。デフォルト設定ならサーバーが&lt;code&gt;http://localhost:18888/&lt;/code&gt;で起動するので、適当なブラウザで開く。&lt;/p&gt;
+&lt;p&gt;チュートリアルは&lt;a class="link" href="https://github.com/w-okada/voice-changer/blob/master/tutorials/tutorial_rvc_ja_latest.md" target="_blank" rel="noopener"
+&gt;ここ&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="ループバック"&gt;ループバック
+&lt;/h3&gt;&lt;p&gt;実際にボイスチャットなどでマイク入力として使用する場合は、出力から入力へループバックする必要がある。PipeWireなら&lt;code&gt;libpipewire-module-loopback&lt;/code&gt;を使うとよさそう。
 実際の方法は&lt;a class="link" href="https://sorrel.sh/blog/pipewire-how-to-static-loopbacks/" target="_blank" rel="noopener"
->この記事&lt;/a>とかを見るのがよさげかも。&lt;/p>
-&lt;h3 id="終了する">終了する
-&lt;/h3>&lt;p>CTRL-cで終了できているように見えるが、裏ではまだ生きているのでhtopやらなんやらでkillする。(もっとちゃんとした方法があるかも)&lt;br>
-&lt;code>deactivate&lt;/code>で仮想環境を抜ければおわり。&lt;/p>
-&lt;h2 id="リンク">リンク
-&lt;/h2>&lt;p>&lt;a class="link" href="https://github.com/w-okada/voice-changer" target="_blank" rel="noopener"
->VCClient&lt;/a>&lt;br>
+&gt;この記事&lt;/a&gt;とかを見るのがよさげかも。&lt;/p&gt;
+&lt;h3 id="終了する"&gt;終了する
+&lt;/h3&gt;&lt;p&gt;CTRL-cで終了できているように見えるが、裏ではまだ生きているのでhtopやらなんやらでkillする。(もっとちゃんとした方法があるかも)&lt;br&gt;
+&lt;code&gt;deactivate&lt;/code&gt;で仮想環境を抜ければおわり。&lt;/p&gt;
+&lt;h2 id="リンク"&gt;リンク
+&lt;/h2&gt;&lt;p&gt;&lt;a class="link" href="https://github.com/w-okada/voice-changer" target="_blank" rel="noopener"
+&gt;VCClient&lt;/a&gt;&lt;br&gt;
 &lt;a class="link" href="https://github.com/astral-sh/uv" target="_blank" rel="noopener"
->uv&lt;/a>&lt;/p></description></item><item><title>ddc-fuzzyにddc-filter-matcher_prefixを合わせるといい感じかも</title><link>https://yayoyuyu.github.io/post/2020240803-ddc-fuzzy-and-matcher_prefix/</link><pubDate>Sat, 03 Aug 2024 02:16:01 +0900</pubDate><guid>https://yayoyuyu.github.io/post/2020240803-ddc-fuzzy-and-matcher_prefix/</guid><description>&lt;p>基本的にddc.vimのfilterはddc-fuzzyを使っていたのだけど、途中の部分にマッチしたものが出ていたのが出てくるのがあまり好きじゃなかったのでmatcher_prefixでprefixにマッチさせたら結構いい感じだったかもしれない。&lt;/p>
-&lt;p>&lt;img src="https://i.gyazo.com/3343fb764fb0fc88a7d9c3b37bb3da42.webp"
+&gt;uv&lt;/a&gt;&lt;/p&gt;</description></item><item><title>ddc-fuzzyにddc-filter-matcher_prefixを合わせるといい感じかも</title><link>https://yayoyuyu.github.io/post/2020240803-ddc-fuzzy-and-matcher_prefix/</link><pubDate>Sat, 03 Aug 2024 02:16:01 +0900</pubDate><guid>https://yayoyuyu.github.io/post/2020240803-ddc-fuzzy-and-matcher_prefix/</guid><description>&lt;p&gt;基本的にddc.vimのfilterはddc-fuzzyを使っていたのだけど、途中の部分にマッチしたものが出ていたのが出てくるのがあまり好きじゃなかったのでmatcher_prefixでprefixにマッチさせたら結構いい感じだったかもしれない。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://i.gyazo.com/3343fb764fb0fc88a7d9c3b37bb3da42.webp"
 loading="lazy"
 alt="ビフォーアフター"
->&lt;/p>
-&lt;p>だいたいこんなかんじ。&lt;/p>
-&lt;p>ちなみにmatcher_prefixのparamsのprefixLengthを変更するとprefixの長さを変更出来る。&lt;/p></description></item><item><title>skkeletonがgit経由で取得した辞書を読んでくれない問題の対処</title><link>https://yayoyuyu.github.io/post/20231209-skkeleton-doesnt-read-dict/</link><pubDate>Sat, 09 Dec 2023 02:31:56 +0900</pubDate><guid>https://yayoyuyu.github.io/post/20231209-skkeleton-doesnt-read-dict/</guid><description>&lt;h2 id="なんでこうなるの">なんでこうなるの
-&lt;/h2>&lt;p>gitが改行コードを自動で変換する設定になっていたせいらしい&lt;br>
-skkeletonは辞書の改行コードがLFじゃないと読んでくれないのでそのせいで失敗してた&lt;/p>
-&lt;h2 id="対処">対処
-&lt;/h2>&lt;p>こんな感じでgitの設定を変更して改行コードの自動変換をオフにすればよい&lt;/p>
-&lt;pre tabindex="0">&lt;code>git config --global core.autocrlf false
-&lt;/code>&lt;/pre>&lt;p>追記
-globalで設定すると他のリポジトリに問題が起きる可能性があるのでlocalで設定した方が安全かも&lt;/p></description></item><item><title>最初の</title><link>https://yayoyuyu.github.io/post/first/</link><pubDate>Sun, 12 Nov 2023 15:00:18 +0900</pubDate><guid>https://yayoyuyu.github.io/post/first/</guid><description>&lt;p>暇だったのでGithub Pages+Hugoでサイト作ってみました。&lt;br>
-Github Pages、無料なんでね。無料。無料ですよ？もう使うしか無いじゃないですか…&lt;/p>
-&lt;p>Hugo触るの初めてなのでよくわからないですが、情報はいっぱいあるのでそんなに難しくはないかな～？
-理解に若干苦しんだのはリポジトリを2個使うってことくらいですかね。管理用リポジトリにプッシュして、それをGithub ActionsでビルドしてGithub Pagesのリポジトリにプッシュするっていうのは一瞬わからなかったかも。まあ今は完全に理解しました。&lt;/p>
-&lt;p>一応ちょくちょく何か書きたいな～とは思ってるので多分また何か書きます。多分ね&lt;/p>
-&lt;p>そんじゃ今回はそんな感じで。&lt;/p></description></item></channel></rss>
+&gt;&lt;/p&gt;
+&lt;p&gt;だいたいこんなかんじ。&lt;/p&gt;
+&lt;p&gt;ちなみにmatcher_prefixのparamsのprefixLengthを変更するとprefixの長さを変更出来る。&lt;/p&gt;</description></item><item><title>skkeletonがgit経由で取得した辞書を読んでくれない問題の対処</title><link>https://yayoyuyu.github.io/post/20231209-skkeleton-doesnt-read-dict/</link><pubDate>Sat, 09 Dec 2023 02:31:56 +0900</pubDate><guid>https://yayoyuyu.github.io/post/20231209-skkeleton-doesnt-read-dict/</guid><description>&lt;h2 id="なんでこうなるの"&gt;なんでこうなるの
+&lt;/h2&gt;&lt;p&gt;gitが改行コードを自動で変換する設定になっていたせいらしい&lt;br&gt;
+skkeletonは辞書の改行コードがLFじゃないと読んでくれないのでそのせいで失敗してた&lt;/p&gt;
+&lt;h2 id="対処"&gt;対処
+&lt;/h2&gt;&lt;p&gt;こんな感じでgitの設定を変更して改行コードの自動変換をオフにすればよい&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;git config --global core.autocrlf false
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;追記
+globalで設定すると他のリポジトリに問題が起きる可能性があるのでlocalで設定した方が安全かも&lt;/p&gt;</description></item></channel></rss>
